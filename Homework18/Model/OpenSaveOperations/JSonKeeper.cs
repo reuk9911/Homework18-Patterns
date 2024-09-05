@@ -34,7 +34,12 @@ namespace Homework18.Model.OpenSaveOperations
                 TypeNameHandling = TypeNameHandling.All
             };
             string json = JsonConvert.SerializeObject(animals, Formatting.Indented, serializeSettings);
-            File.WriteAllText(fileName, json);
+            //File.WriteAllText(fileName, json);
+            using (StreamWriter writer = new StreamWriter(fileName, false))
+            {
+                writer.Write(json);
+            }
+
         }
     }
 }
