@@ -8,6 +8,8 @@ namespace Homework18.Model
 {
     public class Bird : AbstractAnimal
     {
+        public decimal WingSpan { get; set; }
+
         public Bird() : base()
         {
             this._animalType = "Птица";

@@ -41,6 +41,9 @@
     <Reference Include="LightInject, Version=6.6.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\LightInject.6.6.1\lib\net462\LightInject.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.122\lib\net462\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -89,7 +92,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -97,7 +100,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Model\RelayCommand.cs" />
+    <Compile Include="Utils\DefaultDialogService.cs" />
+    <Compile Include="Utils\IDialogService.cs" />
+    <Compile Include="ViewModel\DataManageVM.cs" />
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -113,7 +120,7 @@
     <Compile Include="Model\OpenSaveOperations\FileWorker.cs" />
     <Compile Include="Model\OpenSaveOperations\IOpenSave.cs" />
     <Compile Include="Model\OpenSaveOperations\JSonKeeper.cs" />
-    <Compile Include="Model\OpenSaveOperations\XMLKeeper.cs" />
+    <Compile Include="Model\OpenSaveOperations\XmlKeeper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

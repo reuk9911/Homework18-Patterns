@@ -10,6 +10,7 @@ namespace Homework18.Model.OpenSaveOperations
     {
         public IOpenSave Mode { get; set; }
 
+        
         public FileWorker(IOpenSave Method)
         {
             this.Mode = Method;

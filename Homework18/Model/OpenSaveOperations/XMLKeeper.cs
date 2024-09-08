@@ -14,7 +14,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Homework18.Model.OpenSaveOperations
 {
-    public class XMLKeeper : IOpenSave
+    public class XmlKeeper : IOpenSave
     {
         public IEnumerable<IAnimal> GetAnimals(string fileName)
         {

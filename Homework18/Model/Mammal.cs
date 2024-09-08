@@ -9,7 +9,8 @@ namespace Homework18.Model
 {
     public class Mammal: AbstractAnimal
     {
-        public decimal Weight { get; set; }
+        public decimal CoatLength { get; set; }
+
         public Mammal() : base()
         {
             this._animalType = "Млекопитающее";
@@ -20,6 +21,5 @@ namespace Homework18.Model
             this._animalType = "Млекопитающее";
         }
 
-        public void ToRun() { }
     }
 }

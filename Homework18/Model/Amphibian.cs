@@ -8,6 +8,8 @@ namespace Homework18.Model
 {
     public class Amphibian : AbstractAnimal
     {
+        public decimal Length { get; set; }
+
         public Amphibian() : base()
         {
             this._animalType = "Земноводное";
