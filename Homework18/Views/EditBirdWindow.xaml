@@ -1,0 +1,24 @@
+﻿<Window x:Class="Homework18.Views.EditBirdWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework18.Views"
+        xmlns:newbirdvm="clr-namespace:Homework18.ViewModels"
+        mc:Ignorable="d"
+        Title="Добавить птицу" Height="300" Width="200">
+    <Grid>
+        <Grid>
+            <StackPanel Margin="3">
+                <Label Content="Кличка"/>
+                <TextBox Text="{Binding Breed, Mode=TwoWay}"/>
+                <Label Content="Возраст"/>
+                <TextBox Text="{Binding Age, Mode=TwoWay}"/>
+                <Label Content="Размах крыльев"/>
+                <TextBox Text="{Binding WingSpan, Mode=TwoWay}"/>
+                <Button Content="Add" Command = "{Binding EditCommand}" 
+                        CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

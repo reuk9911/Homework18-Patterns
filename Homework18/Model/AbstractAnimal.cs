@@ -9,29 +9,15 @@ namespace Homework18.Model
     public abstract class AbstractAnimal : IAnimal
     {
 
-        #region
+        # region свойства
 
         protected string _animalType;
 
-        #endregion
-
-        #region свойства
         public string AnimalType { get => _animalType; }
 
         public string Breed { get; set; }
 
-        public DateTime Birthday { get; set; }
-
-        public string Age
-        {
-            get
-            {
-                if (Birthday == DateTime.MinValue)
-                    return "Not Determined";
-                else
-                    return (DateTime.Now.Year - Birthday.Year).ToString();
-            }
-        }
+        public int Age { get; set; }
 
         #endregion
 
@@ -40,14 +26,14 @@ namespace Homework18.Model
         public AbstractAnimal()
         {
             this._animalType = "Not Determined";
-            this.Birthday = DateTime.MinValue;
+            this.Age = 0;
             this.Breed = "Not Determined";
         }
 
-        public AbstractAnimal(string breed, DateTime birthday)
+        public AbstractAnimal(string breed, int age)
         {
             this.Breed = breed;
-            this.Birthday = birthday;
+            this.Age = age;
         }
 
         #endregion

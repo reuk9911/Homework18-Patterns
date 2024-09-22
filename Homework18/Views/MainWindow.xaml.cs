@@ -15,8 +15,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Homework18.Model;
 using Homework18.Model.OpenSaveOperations;
+using Homework18.ViewModels;
 
-namespace Homework18.View
+namespace Homework18.Views
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -25,12 +26,13 @@ namespace Homework18.View
     {
         public MainWindow()
         {
-            //InitializeComponent();
-            //IAnimal ia = AnimalFactory.GetAnimal("Homework18.Model.Mammal", "Barsik", new DateTime(1998, 01, 02));
-            //IAnimal ia2 = AnimalFactory.GetAnimal("Homework18.Model.Bird", "Kesha", new DateTime(2023, 01, 02));
+            InitializeComponent();
+            //IAnimal ia = AnimalFactory.GetNewAnimal("Homework18.Model.Mammal", "Barsik", 3);
+            //IAnimal ia2 = AnimalFactory.GetNewAnimal("Homework18.Model.Bird", "Kesha", 10);
 
             //ObservableCollection<IAnimal> animals = new ObservableCollection<IAnimal>();
             //(ia as Mammal).CoatLength = 10;
+            //(ia2 as Bird).WingSpan = 3;
 
             //animals.Add(ia);
             //animals.Add(ia2);
@@ -41,17 +43,13 @@ namespace Homework18.View
             //string fName = @"Output\jsonSerialization.txt";
             //fwJSon.Save(animals, fName);
 
-            //ObservableCollection<IAnimal> animalsDeser = new ObservableCollection<IAnimal>(fwJSon.Load(fName));
-            //bool b = animalsDeser[0] is Mammal ? true : false;
-
 
             //XmlKeeper xmlk = new XmlKeeper();
             //FileWorker fwXml = new FileWorker(xmlk);
-            //fName = @"Output\xmlSerialization2.txt";
+            //fName = @"Output\xmlSerialization.txt";
             //fwXml.Save(animals, fName);
 
-            //animalsDeser = new ObservableCollection<IAnimal>(fwXml.Load(fName));
-            //b = animalsDeser[0] is Mammal ? true : false;
+
 
         }
 

@@ -15,7 +15,7 @@ namespace Homework18.Model
             this._animalType = "Птица";
         }
 
-        public Bird(string breed, DateTime birthday) : base(breed, birthday)
+        public Bird(string breed, int age) : base(breed, age)
         {
             this._animalType = "Птица";
         }

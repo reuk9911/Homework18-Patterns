@@ -12,7 +12,6 @@ namespace Homework18.Model
 
         string Breed { get; set; }
 
-        DateTime Birthday { get; set; }
-        string Age { get; }
+        int Age { get; set; }
     }
 }

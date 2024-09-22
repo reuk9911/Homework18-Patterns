@@ -2,8 +2,18 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Homework18"
-             StartupUri="View/MainWindow.xaml">
+             xmlns:views ="clr-namespace:Homework18.Views" 
+             xmlns:viewmodels ="clr-namespace:Homework18.ViewModels"
+             StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+        <!--<DataTemplate DataType="{x:Type viewmodels:AddBirdVM}">
+            <views:AddBird/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AddMammalVM}">
+            <views:AddMammalView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:AddAmphibianVM}">
+            <views:AddAmphibianView/>
+        </DataTemplate>-->
     </Application.Resources>
 </Application>
