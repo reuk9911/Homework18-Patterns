@@ -11,8 +11,14 @@ namespace Homework18.ViewModels
 {
     public class EditAmphibianVM : BaseVM
     {
+        /// <summary>
+        /// Длина земноводного
+        /// </summary>
         public decimal Length { get; set; }
 
+        /// <summary>
+        /// Животное, которое будет редактироваться
+        /// </summary>
         public Amphibian Amphibian { get; set; }
 
         public EditAmphibianVM() : base()

@@ -11,7 +11,9 @@ namespace Homework18.Model
     public class Bird : AbstractAnimal
     {
         private decimal wingSpan;
-
+        /// <summary>
+        /// Размах крыльев
+        /// </summary>
         public decimal WingSpan
         {
             get { return wingSpan; }
@@ -24,12 +26,18 @@ namespace Homework18.Model
                 }
             }
         }
-
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
         public Bird() : base()
         {
             this._animalType = "Птица";
         }
-
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="breed">Кличка</param>
+        /// <param name="age">Возраст</param>
         public Bird(string breed, int age) : base(breed, age)
         {
             this._animalType = "Птица";

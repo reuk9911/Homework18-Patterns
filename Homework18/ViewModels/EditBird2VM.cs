@@ -11,8 +11,14 @@ namespace Homework18.ViewModels
 {
     public class EditBird2VM : BaseVM
     {
+        /// <summary>
+        /// Размах крыльев
+        /// </summary>
         public decimal WingSpan { get; set; }
 
+        /// <summary>
+        /// Животное,которое будет редактироваться
+        /// </summary>
         public Bird Bird { get; set; }
 
         public EditBird2VM() : base()

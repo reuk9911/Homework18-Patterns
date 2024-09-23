@@ -11,8 +11,14 @@ namespace Homework18.ViewModels
 {
     public class EditMammalVM : BaseVM
     {
+        /// <summary>
+        /// Длина хвоста
+        /// </summary>
         public decimal CoatLength { get; set; }
 
+        /// <summary>
+        /// Животное,которое будет редактироваться
+        /// </summary>
         public Mammal Mammal { get; set; }
 
         public EditMammalVM() : base()

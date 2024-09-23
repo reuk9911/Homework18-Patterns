@@ -10,8 +10,15 @@ namespace Homework18.Utils
 {
     public class DefaultDialogService : IDialogService
     {
+        /// <summary>
+        /// Путь к файлу
+        /// </summary>
         public string FilePath { get; set; }
 
+        /// <summary>
+        /// Диалоговое окно открытия
+        /// </summary>
+        /// <returns></returns>
         public bool OpenFileDialog()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -23,6 +30,10 @@ namespace Homework18.Utils
             return false;
         }
 
+        /// <summary>
+        /// Диалоговое окно сохранения
+        /// </summary>
+        /// <returns></returns>
         public bool SaveFileDialog()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();

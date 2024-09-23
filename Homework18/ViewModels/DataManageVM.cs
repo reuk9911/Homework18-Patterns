@@ -17,12 +17,20 @@ namespace Homework18.ViewModels
     {
         #region Поля и свойства
 
+        /// <summary>
+        /// Типы животных
+        /// </summary>
         public List<string> AnimalTypes { get; }
+        /// <summary>
+        /// Выбранный тип животного для добавления в коллекцию
+        /// </summary>
         public string SelectedAnimalType { get; set; }
 
-
+        
         private BaseVM selectedVM;
-
+        /// <summary>
+        /// Какую viewmodel будем открывать
+        /// </summary>
         public BaseVM SelectedVM
         {
             get 
@@ -36,8 +44,11 @@ namespace Homework18.ViewModels
             }
         }
 
-
+        
         private ObservableCollection<IAnimal> allAnimals;
+        /// <summary>
+        /// Коллекция животных
+        /// </summary>
         public ObservableCollection<IAnimal> AllAnimals
         {
             get { return allAnimals; }
@@ -53,7 +64,9 @@ namespace Homework18.ViewModels
 
 
         private IAnimal selectedAnimal;
-
+        /// <summary>
+        /// Выбранное животное из коллекции
+        /// </summary>
         public IAnimal SelectedAnimal
         {
             get { return selectedAnimal; }
@@ -67,12 +80,26 @@ namespace Homework18.ViewModels
             }
         }
 
-        public FileWorker FileOperations { get; set; }
 
+        private FileWorker FileOperations { get; set; }
+
+        /// <summary>
+        /// Из какого формата загружаться
+        /// </summary>
         public ObservableCollection<string> LoadFrom { get; set; }
+        
+        /// <summary>
+        /// В какой формат сохраняться
+        /// </summary>
         public ObservableCollection<string> SaveTo { get; set; }
 
+        /// <summary>
+        /// Загружаться из JSon или Xml 
+        /// </summary>
         public string SelectedLoadFrom { get; set; }
+        /// <summary>
+        /// Мохраняться в JSon или Xml 
+        /// </summary>
         public string SelectedSaveTo { get; set; }
 
         #endregion
@@ -114,6 +141,10 @@ namespace Homework18.ViewModels
 
 
         private RelayCommand loadAnimals;
+
+        /// <summary>
+        /// Загружаемся из файла
+        /// </summary>
         public RelayCommand LoadAnimals
         {
             get
@@ -137,6 +168,9 @@ namespace Homework18.ViewModels
         }
 
         private RelayCommand saveAnimals;
+        /// <summary>
+        /// Сохраняемся в файл
+        /// </summary>
         public RelayCommand SaveAnimals
         {
             get
@@ -161,6 +195,9 @@ namespace Homework18.ViewModels
 
 
         private RelayCommand addAnimalCommand;
+        /// <summary>
+        /// Добавляет новое животное в коллекцию
+        /// </summary>
         public RelayCommand AddAnimalCommand
         {
             get
@@ -203,6 +240,10 @@ namespace Homework18.ViewModels
         }
 
         private RelayCommand editAnimalCommand;
+
+        /// <summary>
+        /// Редактирует животное из коллекции
+        /// </summary>
         public RelayCommand EditAnimalCommand
         {
             get
@@ -237,14 +278,7 @@ namespace Homework18.ViewModels
             }
         }
 
-
-
-
         #endregion
-
-
-
-
 
 
     }
