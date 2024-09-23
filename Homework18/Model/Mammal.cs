@@ -9,7 +9,20 @@ namespace Homework18.Model
 {
     public class Mammal: AbstractAnimal
     {
-        public decimal CoatLength { get; set; }
+        private decimal coatLength;
+
+        public decimal CoatLength
+        {
+            get { return coatLength; }
+            set
+            {
+                if (coatLength != value)
+                {
+                    coatLength = value;
+                    RaisePropertyChangedEvent("CoatLength");
+                }
+            }
+        }
 
         public Mammal() : base()
         {

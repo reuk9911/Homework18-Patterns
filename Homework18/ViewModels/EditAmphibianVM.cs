@@ -5,24 +5,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows;
 
 namespace Homework18.ViewModels
 {
-    public class EditBirdVM : BaseVM
+    public class EditAmphibianVM : BaseVM
     {
-        public decimal WingSpan { get; set; }
+        public decimal Length { get; set; }
 
-        private Bird bird;
+        public Amphibian Amphibian { get; set; }
 
-        public EditBirdVM():base() 
+        public EditAmphibianVM() : base()
         {
         }
 
-        public EditBirdVM(Bird newBird)
+        public EditAmphibianVM(Amphibian newAmphibian)
         {
-            this.bird = newBird;
+            this.Amphibian = newAmphibian;
+
+            this.Breed = newAmphibian.Breed;
+            this.Age = newAmphibian.Age;
+            this.Length = newAmphibian.Length;
         }
 
         private RelayCommand editCommand;
@@ -32,14 +35,13 @@ namespace Homework18.ViewModels
             {
                 return editCommand ?? new RelayCommand(obj =>
                 {
-                    this.bird.Breed = this.Breed;
-                    this.bird.Age = this.Age;
-                    this.bird.WingSpan = this.WingSpan;
+                    this.Amphibian.Breed = this.Breed;
+                    this.Amphibian.Age = this.Age;
+                    this.Amphibian.Length = this.Length;
                     ((Window)obj).Close();
 
                 });
             }
         }
-
     }
 }

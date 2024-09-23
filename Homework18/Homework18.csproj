@@ -92,11 +92,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\EditAmphibianWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditBird2Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EditBirdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditMammalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,15 +119,22 @@
     <Compile Include="Model\RelayCommand.cs" />
     <Compile Include="Utils\DefaultDialogService.cs" />
     <Compile Include="Utils\IDialogService.cs" />
+    <Compile Include="ViewModels\EditAmphibianVM.cs" />
     <Compile Include="ViewModels\EditBird2VM.cs" />
-    <Compile Include="ViewModels\EditBirdVM.cs" />
     <Compile Include="ViewModels\BaseVM.cs" />
     <Compile Include="ViewModels\DataManageVM.cs" />
+    <Compile Include="ViewModels\EditMammalVM.cs" />
+    <Compile Include="Views\EditAmphibianWindow.xaml.cs">
+      <DependentUpon>EditAmphibianWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditBird2Window.xaml.cs">
       <DependentUpon>EditBird2Window.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EditBirdWindow.xaml.cs">
       <DependentUpon>EditBirdWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditMammalWindow.xaml.cs">
+      <DependentUpon>EditMammalWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

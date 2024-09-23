@@ -9,22 +9,23 @@ using System.Windows;
 
 namespace Homework18.ViewModels
 {
-    public class EditBird2VM : BaseVM
+    public class EditMammalVM : BaseVM
     {
-        public decimal WingSpan { get; set; }
+        public decimal CoatLength { get; set; }
 
-        public Bird Bird { get; set; }
+        public Mammal Mammal { get; set; }
 
-        public EditBird2VM() : base()
+        public EditMammalVM() : base()
         {
         }
 
-        public EditBird2VM(Bird newBird)
+        public EditMammalVM(Mammal newMammal)
         {
-            this.Bird = newBird;
-            this.Breed = newBird.Breed;
-            this.Age = newBird.Age;
-            this.WingSpan = newBird.WingSpan;
+            this.Mammal = newMammal;
+
+            this.Breed = newMammal.Breed;
+            this.Age = newMammal.Age;
+            this.CoatLength = newMammal.CoatLength;
         }
 
         private RelayCommand editCommand;
@@ -34,9 +35,9 @@ namespace Homework18.ViewModels
             {
                 return editCommand ?? new RelayCommand(obj =>
                 {
-                    this.Bird.Breed = this.Breed;
-                    this.Bird.Age = this.Age;
-                    this.Bird.WingSpan = this.WingSpan;
+                    this.Mammal.Breed = this.Breed;
+                    this.Mammal.Age = this.Age;
+                    this.Mammal.CoatLength = this.CoatLength;
                     ((Window)obj).Close();
 
                 });

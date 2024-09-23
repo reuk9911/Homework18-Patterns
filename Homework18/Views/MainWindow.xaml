@@ -56,7 +56,10 @@
             <!--*** Добавить ***-->
             
             <!--Редактировать-->
-            <Button Margin="1" Content="Редактировать" Command="{Binding EditAnimalCommand}"/>
+            <Button Margin="1" 
+                    Content="Редактировать" 
+                    Command="{Binding EditAnimalCommand}"
+                    CommandParameter="{Binding SelectedAnimal}"/>
             <!--*** Редактировать ***-->
 
 

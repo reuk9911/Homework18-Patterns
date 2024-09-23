@@ -51,7 +51,22 @@ namespace Homework18.ViewModels
             }
         }
 
-        public IAnimal SelectedAnimal { get; set; }
+
+        private IAnimal selectedAnimal;
+
+        public IAnimal SelectedAnimal
+        {
+            get { return selectedAnimal; }
+            set
+            {
+                if (selectedAnimal != value)
+                {
+                    selectedAnimal = value;
+                    RaisePropertyChangedEvent("SelectedAnimal");
+                }
+            }
+        }
+
         public FileWorker FileOperations { get; set; }
 
         public ObservableCollection<string> LoadFrom { get; set; }
@@ -128,7 +143,7 @@ namespace Homework18.ViewModels
             {
                 return saveAnimals ?? new RelayCommand(obj =>
                 {
-                    switch (SelectedLoadFrom)
+                    switch (SelectedSaveTo)
                     {
                         case "JSon": FileOperations = new FileWorker(new JSonKeeper()); break;
                         case "Xml": FileOperations = new FileWorker(new XmlKeeper()); break;
@@ -154,33 +169,32 @@ namespace Homework18.ViewModels
                 {
                     switch (SelectedAnimalType)
                     {
-                        //case "Bird":
-                        //    Bird newBird = (Bird)AnimalFactory.GetNewAnimal("Homework18.Model.Bird");
-                        //    SelectedVM = new EditBirdVM(newBird);
-                        //    EditBirdWindow w = new EditBirdWindow();
-                        //    w.DataContext = SelectedVM;
-                        //    w.ShowDialog();
-                        //    AllAnimals.Add(newBird);
-                        //    break;
-
                         case "Bird":
                             Bird newBird = (Bird)AnimalFactory.GetNewAnimal("Homework18.Model.Bird");
                             SelectedVM = new EditBird2VM(newBird);
-                            EditBird2Window w = new EditBird2Window();
-                            w.DataContext = SelectedVM;
-                            w.ShowDialog();
+                            EditBird2Window wBird = new EditBird2Window();
+                            wBird.DataContext = SelectedVM;
+                            wBird.ShowDialog();
                             AllAnimals.Add(newBird);
                             break;
 
-                        //case "Mammal":
-                        //    Mammal newMammal = (Mammal)AnimalFactory.GetNewAnimal("Homework18.Model.Mammal");
-                        //    SelectedVM = new AddMammalVM(newMammal);
-                        //    AddMammalWindow w = new AddMammalWindow();
-                        //    w.DataContext = SelectedVM;
-                        //    w.ShowDialog();
-                        //    AllAnimals.Add(newMammal);
-                        //    break;
-                        //case "Amphibian": SelectedVM = new EditAmphibianVM(); break;
+                        case "Mammal":
+                            Mammal newMammal = (Mammal)AnimalFactory.GetNewAnimal("Homework18.Model.Mammal");
+                            SelectedVM = new EditMammalVM(newMammal);
+                            EditMammalWindow wMammal = new EditMammalWindow();
+                            wMammal.DataContext = SelectedVM;
+                            wMammal.ShowDialog();
+                            AllAnimals.Add(newMammal);
+                            break;
+                        case "Amphibian":
+                            Amphibian newAmphibian = (Amphibian)AnimalFactory.GetNewAnimal("Homework18.Model.Amphibian");
+                            SelectedVM = new EditAmphibianVM(newAmphibian);
+                            EditAmphibianWindow wAmphibian = new EditAmphibianWindow();
+                            wAmphibian.DataContext = SelectedVM;
+                            wAmphibian.ShowDialog();
+                            AllAnimals.Add(newAmphibian);
+                            break;
+
                         default: return;
                     }
                     
@@ -199,15 +213,27 @@ namespace Homework18.ViewModels
                     {
                         case "Птица":
                             SelectedVM = new EditBird2VM(SelectedAnimal as Bird);
-                            EditBird2Window w = new EditBird2Window();
-                            w.DataContext = SelectedVM;
-                            w.ShowDialog();
-                            //AllAnimals.Add(newBird);
+                            EditBird2Window wBird = new EditBird2Window();
+                            wBird.DataContext = SelectedVM;
+                            wBird.ShowDialog();
+                            break;
+                        case "Млекопитающее":
+                            SelectedVM = new EditMammalVM(SelectedAnimal as Mammal);
+                            EditMammalWindow wMammal = new EditMammalWindow();
+                            wMammal.DataContext = SelectedVM;
+                            wMammal.ShowDialog();
+                            break;
+                        case "Земноводное":
+                            SelectedVM = new EditAmphibianVM(SelectedAnimal as Amphibian);
+                            EditAmphibianWindow wAmphibian = new EditAmphibianWindow();
+                            wAmphibian.DataContext = SelectedVM;
+                            wAmphibian.ShowDialog();
                             break;
                         default: return;
+                    
                     }
-
-                });
+                },
+            (obj) => obj != null);
             }
         }
 

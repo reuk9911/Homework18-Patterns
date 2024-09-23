@@ -8,7 +8,20 @@ namespace Homework18.Model
 {
     public class Amphibian : AbstractAnimal
     {
-        public decimal Length { get; set; }
+        private decimal length;
+
+        public decimal Length
+        {
+            get { return length; }
+            set
+            {
+                if (length != value)
+                {
+                    length = value;
+                    RaisePropertyChangedEvent("Length");
+                }
+            }
+        }
 
         public Amphibian() : base()
         {
